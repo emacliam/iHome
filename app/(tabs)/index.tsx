@@ -13,10 +13,10 @@ export default function TabOneScreen() {
   const theme = useTheme()
   const [selectedDevice, setSelectedDevice] = useState(0)
   const devices = [
-    Device({ icon_name: "snow", room: "Living Room", device: "Air Conditioner", subtext: "20°C" }),
-    Device({ icon_name: "bulb", room: "Living Room", device: "Smart Lamp" }),
-    Device({ icon_name: "tv-outline", room: "Living Room", device: "Smart TV" }),
-    Device({ icon_name: "wifi", room: "Living Room", device: "Router", subtext: "3", subtext2: "Users" })
+    Device({ icon_name: "snow", room: "Living Room", device: "Air Conditioner", subtext: "20°C", link: "air-conditioner" }),
+    Device({ icon_name: "bulb", room: "Living Room", device: "Smart Lamp", link: "smart-lamp" }),
+    Device({ icon_name: "tv-outline", room: "Living Room", device: "Smart TV", link: "smart-lamp" }),
+    Device({ icon_name: "wifi", room: "Living Room", device: "Router", subtext: "3", subtext2: "Users", link: "smart-lamp" })
   ]
 
   return (

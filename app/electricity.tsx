@@ -7,7 +7,7 @@ import { useState } from 'react';
 import Device from '../components/DeviceCards';
 import { CustomSelect } from '../components/CustomSelect';
 import { BarChart, LineChart, PieChart, PopulationPyramid } from "react-native-gifted-charts";
-import { Rect, Svg, Text as TextSVG } from 'react-native-svg';
+import { LinearGradient, Rect, Stop, Svg, Text as TextSVG } from 'react-native-svg';
 import DeviceEnergy from '../components/ElectricityDeviceCards';
 
 
@@ -39,7 +39,7 @@ export default function Energy() {
 
 
     return (
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
             <View mt={20} mb={100} px={10} flex={1} alignItems="center" top={top} >
 
                 <Card mx={10} w={'100%'} p={14} borderRadius={10} backgroundColor={"$gray3"} padded padding={25}>
@@ -74,7 +74,7 @@ export default function Energy() {
 
 
                 <View flex={1} mx={30} w={'100%'}>
-                    <XStack ai="center" mt={30} mb={10} alignItems='center' alignContent='center' justifyContent='space-between'>
+                    <XStack ai="center" mt={30} alignItems='center' alignContent='center' justifyContent='space-between'>
 
 
                         <Label f={1} fb={0}>
@@ -82,12 +82,15 @@ export default function Energy() {
                         </Label>
                         <CustomSelect />
                     </XStack>
-                    <View left={-30}>
+                    <Paragraph color={"$gray10"}>
+                        Select bar to view day's usage
+                    </Paragraph>
+                    <View left={-30} mt={10}>
                         <BarChart
 
                             barWidth={28}
                             xAxisThickness={1}
-                            xAxisColor={"#787d79"}
+                            xAxisColor={"#413F42"}
                             noOfSections={1}
                             height={150}
                             yAxisOffset={10}
@@ -97,6 +100,9 @@ export default function Energy() {
                             isAnimated
                             maxValue={1000}
                             data={data}
+                            roundedBottom={false}
+                            barBorderBottomLeftRadius={0}
+                            barBorderBottomRightRadius={0}
                             dashGap={1000}
                             //onPress={handleFocus}
 
@@ -128,6 +134,7 @@ export default function Energy() {
 
 
                         />
+
                     </View>
 
                 </View>
@@ -146,7 +153,7 @@ export default function Energy() {
 
                 </View>
                 <YStack w={"100%"} gap={10}>
-                    <DeviceEnergy icon_name={"bulb"} icon_name2={"trending-down"} icon_name2_color={"white"} device={"Smart Lamp"} power={"10 kWh"} subtext={"10%"} power_loss={false} />
+                    <DeviceEnergy icon_name={"bulb"} icon_name2={"trending-down"} icon_name2_color={"green"} device={"Smart Lamp"} power={"10 kWh"} subtext={"10%"} power_loss={false} />
                     <DeviceEnergy icon_name={"tv-outline"} icon_name2={"trending-up"} icon_name2_color={"red"} device={"Smart TV"} power={"10 kWh"} subtext={"5%"} power_loss={true} />
 
                 </YStack>
