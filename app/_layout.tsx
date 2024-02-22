@@ -67,6 +67,7 @@ function RootLayoutNav() {
           <Stack.Screen name="(tabs)" options={{ headerShown: false, title: "home" }} />
           <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
           <Stack.Screen name="electricity" options={{ title: "Energy Usage" }} />
+          <Stack.Screen name="add-device" options={{ title: "Add Device" }} />
           <Stack.Screen name="smart-lamp" options={{
             headerTitle: () => {
               return (

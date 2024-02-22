@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, TouchableOpacity, View } from 'react-native';
 import { BottomTabBarButtonProps } from '@react-navigation/bottom-tabs/lib/typescript/src/types';
 import { FontAwesome as Icon, Ionicons } from '@expo/vector-icons';
+import FloatingActionButton from '../FloatingActionButton';
 
 type Props = BottomTabBarButtonProps & {
     bgColor?: string;
@@ -11,21 +12,7 @@ export const TabBarAdvancedButton: React.FC<Props> = ({
     bgColor,
     ...props
 }) => (
-    <View
-        style={styles.container}
-        pointerEvents="box-none"
-    >
-
-        <TouchableOpacity
-            style={styles.button}
-            onPress={props.onPress}
-        >
-            <Ionicons
-                name="add"
-                style={styles.buttonIcon}
-            />
-        </TouchableOpacity>
-    </View>
+    <FloatingActionButton />
 );
 
 const styles = StyleSheet.create({
@@ -63,3 +50,21 @@ const styles = StyleSheet.create({
         color: '#F6F7EB'
     }
 });
+
+
+{/* <View
+    style={styles.container}
+    pointerEvents="box-none"
+>
+
+    <TouchableOpacity
+        style={styles.button}
+        onPress={props.onPress}
+    >
+        <Ionicons
+            name="add"
+            style={styles.buttonIcon}
+        />
+    </TouchableOpacity>
+    <FloatingActionButton />
+</View> */}

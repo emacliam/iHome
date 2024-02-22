@@ -6,6 +6,8 @@ import { Ionicons } from '@expo/vector-icons';
 import { useState } from 'react';
 import Device from '../../components/DeviceCards';
 import { Link } from 'expo-router';
+import { VibrancyView } from "@react-native-community/blur";
+
 
 
 export default function TabOneScreen() {

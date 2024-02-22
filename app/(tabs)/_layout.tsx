@@ -1,8 +1,9 @@
-import { Ionicons } from '@expo/vector-icons'
+import { Ionicons, Entypo } from '@expo/vector-icons'
 import { Link, Tabs } from 'expo-router'
 import { Pressable } from 'react-native'
-import { Text } from 'tamagui'
+import { Text, View } from 'tamagui'
 import { TabBarAdvancedButton } from '../../components/Navigation/TabBarButton'
+
 
 export default function TabLayout() {
   return (
@@ -30,34 +31,50 @@ export default function TabLayout() {
         options={{
           title: 'Scenes',
           tabBarIcon: ({ color }) => <Ionicons name="reader" size={24} color={color} />,
+          headerRight: () => {
+            return (
+              <View mx={10}>
+                <Ionicons name="add" size={30} color={"#1ca655"} />
+              </View>
+            )
+          }
         }}
       />
 
-      <Tabs.Screen
-        name='five'
-        options={{
-          title: 'Scenes',
-          tabBarIcon: ({ color }) => <Ionicons name="reader" size={24} color={color} />,
-          tabBarButton: (props) => (
-            <TabBarAdvancedButton bgColor={"white"}  {...props} />
-          ),
-        }}
-      />
 
       <Tabs.Screen
         name='three'
         options={{
           title: 'Notifications',
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color }) => <Ionicons name="notifications" size={24} color={color} />,
+          headerRight: () => {
+            return (
+              <View mx={10}>
+                <Entypo name="dots-three-vertical" size={20} color={"white"} />
+              </View>
+            )
+          }
         }}
       />
       <Tabs.Screen
         name='four'
         options={{
           title: 'Profile',
-          headerShown: false,
+          headerShown: true,
           tabBarIcon: ({ color }) => <Ionicons name="person" size={24} color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name='five'
+        options={{
+          title: 'FloatingButton',
+          tabBarIcon: ({ color }) => <Ionicons name="reader" size={24} color={color} />,
+          tabBarButton: (props) => (
+            <TabBarAdvancedButton bgColor={"white"}  {...props} />
+          ),
+
         }}
       />
     </Tabs>
